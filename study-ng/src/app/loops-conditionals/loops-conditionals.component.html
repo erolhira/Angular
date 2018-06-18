@@ -1,0 +1,22 @@
+<h1>
+	{{title}}
+</h1>
+
+<div *ngIf="loopsSelected">
+	<h2>For Loop</h2>
+	<ul>
+		<li *ngFor="let employee of employeeList">{{employee.name}}</li>
+	</ul>
+	
+	<h2>For Loop With Index</h2>
+	<ul>
+		<li *ngFor="let employee of employeeList; let i = index">{{i+1}}. {{employee.name}}</li>
+	</ul>
+</div>
+
+<div *ngIf="conditionalsSelected">
+	<h2>Conditionals - If</h2>
+	<p *ngIf="employeeList.length > 2">
+		There are many employees!
+	</p>
+</div>

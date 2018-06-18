@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files 
+ * @import 'assets/style/app.css';
+**/
+
+h1 {
+	font-size: 22px !important;
+}
+
+h2 {
+	font-size: 16px !important;
+}

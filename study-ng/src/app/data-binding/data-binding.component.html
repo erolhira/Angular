@@ -1,0 +1,47 @@
+<h1>	
+	<!-- interpolation: binding is from component to dom, one-way -->
+	{{title}}
+</h1>	
+
+<h2>Property Binding</h2>
+<p>
+	<!-- property binding: binding is from component to dom, one-way -->	
+	count: {{count}} <br>
+	<input [value]="count"><br>
+	<input bind-value="count">
+</p>
+
+<h2>Event Binding</h2>
+<p>
+	<!-- event binding: calls the component's handleClick method when the user clicks the button. -->	
+	<button (click)="handleClick()">Click me</button>
+	<button on-click="handleClick()">Click me</button><br>
+</p>
+
+<h2>Two-way Data Binding</h2>
+<p>
+	<!-- two-way data binding: requires FormsModule to be imported. -->	
+	<input [(ngModel)]="name" (ngModelChange)="setUppercaseName($event)"> {{name}}
+</p>
+
+<h2>Study-1</h2>
+<p>
+	<!-- one-way but with event handling convert to two-way:
+		This code sets the input box value property by binding to the name property. To listen for changes to the value,
+		the code binds to the input box's input event. When the user makes changes, the input event is raised,
+		and the binding executes the statement within a context that includes the DOM event object, $event. -->
+	<input [value]="surname" (input)="surname=$event.target.value"> {{surname}}
+</p>
+
+<h2>Study-2</h2>
+<p>
+	<!-- You often have a choice between interpolation and property binding.
+		Interpolation is a convenient alternative to property binding in many cases.
+		The following binding pairs do the same thing: -->
+	<p><img src="{{imgUrl}}" style="width: 20px;"> is the <i>interpolated</i> image.</p>
+	<p><img [src]="imgUrl" style="width: 20px;"> is the <i>property bound</i> image.</p>
+	<p><span>"{{title}}" is the <i>interpolated</i> title.</span></p>
+	<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.
+</p>
+
+

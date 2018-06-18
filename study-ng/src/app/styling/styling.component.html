@@ -1,0 +1,27 @@
+<h1>
+	{{title}}
+</h1>
+
+<button (click)="toggleBlue()">Toggle Blue or Black</button>
+<div class="aClass" [class.blue]="isBlue" [class.red]="!isBlue">
+	Burada AppComponent'de isBlue=true ise bu div'e blue adinda bir class eklenir.
+</div>
+
+<div [ngClass]="{red: !isBlue, blue: isBlue}">
+	ngClass kullaniminin yukaridaki ilk kullanimdan daha esnek bir yapisi vardir.
+</div>
+
+<!-- reset/override all class names with a binding -->
+<div class="bad curly special" [class]="badCurlyClass">Bad curly</div>
+
+<!-- While this is a fine way to set a single style, the NgStyle directive is generally preferred when setting several inline styles at the same time. -->
+<button [style.color]="isBlue ? 'blue' : 'red'">Button</button>
+
+<!-- Some style binding styles have a unit extension. The following example conditionally sets the font size in em and % units. -->
+<button [style.font-size.em]="isSpecial ? 2 : 1" >Big</button>
+<button [style.font-size.px]="isSpecial ? 25 : 16" >Middle</button>
+<button [style.font-size.%]="!isSpecial ? 150 : 50" >Small</button>
+
+
+
+
